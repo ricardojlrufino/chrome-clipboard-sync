@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Extension Options</title>
+        <meta charset="utf-8"/>
+        <meta name="description" content="A small CSS Kit for designing the options/settings page for Chrome Extensions. It resembles the exact look as the native settings page of Chrome Browser." />
+        <meta name="keywords" content="chrome-extensions,css-kit-for-chrome-extensions,css-kit,theme-for-chrome-extensions,chrome-developers" />
+        <meta name="author" content="Ricardo JL Rufino" />
+        <link rel="shortcut icon" href="img/favicon.ico"> 
+        <!-- style for chrome extensions -->
+        <link rel="stylesheet" href="css/chrome_shared.css"/>
+        <style>
+            /* Style for this page */
+            body>.main-container{max-width:800px;margin:50px auto}
+            header{max-width:700px;margin:0 auto 50px auto;font-size:48px}
+            .fr{float:right}
+        </style>
+    </head>
+    <body>
+        <div class="main-container">
+            <header>
+                Shared Clipboard Options
+            </header>
+
+            <h1>General config</h1>
+            <hr/>
+
+            <h3>DeviceID</h3>
+            <input type="text" placeholder="Name this device"/>
+            <button style="font-size:11px">Generate</button>
+
+            <h3>JSON Config</h3>
+            <textarea id="json" placeholder="Type here..." rows="7"></textarea>
+
+            <h3>CheckBox</h3>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"/><span></span>This is a checkbox 
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" checked/><span></span>This is a checked checkbox 
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" disabled/><span></span>This is a disabled checkbox 
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" checked disabled/><span></span>This is a disabled but checked checkbox 
+                </label>
+            </div>
+
+            <h3>Radio Buttons</h3>
+            <div class="radio">
+                <div>
+                    <input id="startup-newtab" type="radio" name="startup" value="5" >
+                    <label for="startup-newtab">Radio Button</label>
+                </div>
+            </div>
+            <div class="radio">
+                <div>
+                    <input id="startup-newtab1" type="radio" name="startup" value="5" disabled>
+                    <label for="startup-newtab1">Disabled Radio Button</label>
+                </div>
+            </div>
+
+            <h3>Dropdowns</h3>
+            <select>
+                <option selected>This is a dropdown</option>
+                <option>Another option</option>
+                <option>Another option</option>
+            </select>
+            <h3>Buttons</h3>
+            <button style="font-size:11px">Small Button</button>
+            <button id="save">Save <span id="status"></span> </button>        
+            <button disabled>Disabled Button</button>
+            <br/>
+            <p>
+                With &#9829; by Ricardo JL Rufino
+            </p>
+        </div>
+
+    <script src="./options.js"></script>    
+    </body>
+</html>

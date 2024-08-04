@@ -1,0 +1,23 @@
+{
+  "name": "SharedClipboard",
+  "description": "Share clipboard between devices using MQTT",
+  "version": "1.0",
+  "manifest_version": 3,
+  "minimum_chrome_version": "116",
+  "permissions": ["offscreen", "clipboardWrite", "clipboardRead", "storage", "contextMenus"],
+  "options_page": "options/options.html",
+  "action": {
+    "default_icon": "icons/socket-inactive.png",
+    "default_popup": "popup.html" 
+  },
+  "background": {
+    "service_worker": "backgroud-sw.js",
+    "type": "module"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [ "src/*", "modules/*" , "offscreen.html", "offscreen.js"],
+      "matches": [ "<all_urls>" ]
+    }
+  ]
+}
