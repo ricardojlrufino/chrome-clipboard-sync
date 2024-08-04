@@ -18,6 +18,7 @@ class RemoteConnection {
         let config = this.config;
 
         this.client = mqtt.connect(config.server, {
+            keepalive: 10, 
             username: config.username,
             password: config.password,
             protocolVersion: 5,
@@ -44,7 +45,7 @@ class RemoteConnection {
         });
 
         client.on('message', function (topic, message) {
-            console.log("Received message from " + topic, message);
+            console.log("Received message from " + topic, message.toString());
 
             let remoteDeviceID = topic.substring(topic.indexOf(config.topic) + config.topic.length + 1);
 
